@@ -13,7 +13,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SteveCadwallader.CodeMaid</RootNamespace>
-    <AssemblyName>SteveCadwallader.CodeMaid.VS2022</AssemblyName>
+    <AssemblyName>SteveCadwallader.CodeMaid.VS2026</AssemblyName>
     <SignAssembly>True</SignAssembly>
     <AssemblyOriginatorKeyFile>..\CodeMaid.snk</AssemblyOriginatorKeyFile>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>

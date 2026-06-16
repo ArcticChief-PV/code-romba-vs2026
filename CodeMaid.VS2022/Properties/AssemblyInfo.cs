@@ -1,3 +1,3 @@
 ﻿using System.Reflection;
 
-[assembly: AssemblyTitle("SteveCadwallader.CodeMaid.VS2022")]
+[assembly: AssemblyTitle("SteveCadwallader.CodeMaid.VS2026")]

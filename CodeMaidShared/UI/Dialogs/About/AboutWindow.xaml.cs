@@ -83,7 +83,7 @@ namespace SteveCadwallader.CodeMaid.UI.Dialogs.About
         /// </param>
         private void OnGitHubLinkClick(object sender, RoutedEventArgs e)
         {
-            LaunchLink(@"https://github.com/codecadwallader/codemaid");
+            LaunchLink(@"https://github.com/WinterBiteStudios/codemaid");
         }
 
         /// <summary>
