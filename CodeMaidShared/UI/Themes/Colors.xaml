@@ -1,9 +1,0 @@
-<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <SolidColorBrush x:Key="FCodeMaidGreen" Color="#FF057463" />
-    <SolidColorBrush x:Key="FCodeMaidGray" Color="#FF464646" />
-    <SolidColorBrush x:Key="OCodeMaidGray" Color="#44464646" />
-
-    <SolidColorBrush x:Key="FGComplexityWarning" Color="#FFEB8181" />
-    <SolidColorBrush x:Key="FGComplexityAlert" Color="#FFF23333" />
-</ResourceDictionary>

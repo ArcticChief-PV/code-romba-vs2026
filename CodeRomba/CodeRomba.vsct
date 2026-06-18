@@ -1,0 +1,835 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <!--  This is the file that defines the actual layout and type of the commands.
+        It is divided in different sections (e.g. command definition, command
+        placement, ...), with each defining a specific set of properties.
+        See the comment before each section for more details about how to
+        use it. -->
+
+  <!--  The VSCT compiler (the tool that translates this file into the binary
+        format that VisualStudio will consume) has the ability to run a preprocessor
+        on the vsct file; this preprocessor is (usually) the C++ preprocessor, so
+        it is possible to define includes and macros with the same syntax used
+        in C++ files. Using this ability of the compiler here, we include some files
+        defining some of the constants that we will use inside the file. -->
+
+  <!--This is the file that defines the IDs for all the commands exposed by VisualStudio. -->
+  <Extern href="stdidcmd.h" />
+
+  <!--This header contains the command ids for the menus provided by the shell. -->
+  <Extern href="vsshlids.h" />
+
+  <!--Definition of some VSCT specific constants. In this sample we use it for the IDs inside the guidOfficeIcon group. -->
+  <!--<Extern href="msobtnid.h" xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" />-->
+
+  <!--The Commands section is where we the commands, menus and menu groups are defined.
+      This section uses a Guid to identify the package that provides the command defined inside it. -->
+  <Commands package="GuidCodeRombaPackage">
+    <!-- Inside this section we have different sub-sections: one for the menus, another
+    for the menu groups, one for the buttons (the actual commands), one for the combos
+    and the last one for the bitmaps used. Each element is identified by a command id that
+    is a unique pair of guid and numeric identifier; the guid part of the identifier is usually
+    called "command set" and is used to group different command inside a logically related
+    group; your package should define its own command set in order to avoid collisions
+    with command ids defined by other packages. -->
+
+    <!-- In this section you can define new menu groups. A menu group is a container for
+         other menus or buttons (commands); from a visual point of view you can see the
+         group as the part of a menu contained between two lines. The parent of a group
+         must be a menu. -->
+    <Groups>
+      <Group guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaMenuCleanupGroup" priority="0x0100">
+        <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaMenuBaseGroup" />
+      </Group>
+      <Group guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaMenuDocumentGroup" priority="0x0400">
+        <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaMenuBaseGroup" />
+      </Group>
+      <Group guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaMenuExtendGroup" priority="0x0300">
+        <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaMenuBaseGroup" />
+      </Group>
+      <Group guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaMenuMetaGroup" priority="0x0600">
+        <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaMenuBaseGroup" />
+      </Group>
+      <Group guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaMenuSolutionExplorerGroup" priority="0x0200">
+        <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaMenuBaseGroup" />
+      </Group>
+      <Group guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaMenuVisualizeGroup" priority="0x0500">
+        <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaMenuBaseGroup" />
+      </Group>
+
+      <Group guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaToolbarSpadeBaseGroup" priority="0x0000">
+        <Parent guid="GuidCodeRombaMenuSet" id="ToolbarIDCodeRombaToolbarSpade" />
+      </Group>
+      <Group guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaToolbarSpadeRefreshGroup" priority="0x0200">
+        <Parent guid="GuidCodeRombaMenuSet" id="ToolbarIDCodeRombaToolbarSpade" />
+      </Group>
+      <Group guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaToolbarSpadeSortOrderGroup" priority="0x0400">
+        <Parent guid="GuidCodeRombaMenuSet" id="ToolbarIDCodeRombaToolbarSpade" />
+      </Group>
+      <Group guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaToolbarSpadeMetaGroup" priority="0x0600">
+        <Parent guid="GuidCodeRombaMenuSet" id="ToolbarIDCodeRombaToolbarSpade" />
+      </Group>
+
+      <Group guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextSpadeBaseGroup" priority="0x0000">
+        <Parent guid="GuidCodeRombaMenuSet" id="MenuIDCodeRombaContextSpade" />
+      </Group>
+      <Group guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextSpadeFindGroup" priority="0x0200">
+        <Parent guid="GuidCodeRombaMenuSet" id="MenuIDCodeRombaContextSpade" />
+      </Group>
+      <Group guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextSpadeDeleteGroup" priority="0x0400">
+        <Parent guid="GuidCodeRombaMenuSet" id="MenuIDCodeRombaContextSpade" />
+      </Group>
+      <Group guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextSpadeInsertGroup" priority="0x0600">
+        <Parent guid="GuidCodeRombaMenuSet" id="MenuIDCodeRombaContextSpade" />
+      </Group>
+
+      <Group guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextDocumentTabGroup" priority="0x0100">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_EZDOCWINTAB" />
+      </Group>
+
+      <Group guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextASPXWindowGroup" priority="0x0100">
+        <Parent guid="GuidVisualStudioHTMLWindowContextMenu" id="IDVisualStudioASPXWindowContextMenu" />
+      </Group>
+      <Group guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextASPXCodeWindowGroup" priority="0x0100">
+        <Parent guid="GuidVisualStudioHTMLWindowContextMenu" id="IDVisualStudioASPXCodeWindowContextMenu" />
+      </Group>
+      <Group guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextCodeWindowGroup" priority="0x0100">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_CODEWIN" />
+      </Group>
+      <Group guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextCSSWindowGroup" priority="0x0100">
+        <Parent guid="GuidVisualStudioCSSWindowContextMenu" id="IDVisualStudioCSSWindowContextMenu" />
+      </Group>
+      <Group guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextCSSDocumentGroup" priority="0x0100">
+        <Parent guid="GuidVisualStudioCSSDocumentContextMenu" id="IDVisualStudioCSSDocumentContextMenu" />
+      </Group>
+      <Group guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextDocumentTabGroup" priority="0x0100">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_EZDOCWINTAB" />
+      </Group>
+      <Group guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextHTMLWindowGroup" priority="0x0100">
+        <Parent guid="GuidVisualStudioHTMLWindowContextMenu" id="IDVisualStudioHTMLWindowContextMenu" />
+      </Group>
+      <Group guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextHTMLDocumentGroup" priority="0x0100">
+        <Parent guid="GuidVisualStudioHTMLDocumentContextMenu" id="IDVisualStudioHTMLDocumentContextMenu" />
+      </Group>
+      <Group guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextJSONDocumentGroup" priority="0x0100">
+        <Parent guid="GuidVisualStudioJSONDocumentContextMenu" id="IDVisualStudioJSONDocumentContextMenu" />
+      </Group>
+      <Group guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextScriptWindowGroup" priority="0x0100">
+        <Parent guid="GuidVisualStudioHTMLWindowContextMenu" id="IDVisualStudioScriptWindowContextMenu" />
+      </Group>
+      <Group guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextXAMLWindowGroup" priority="0x0100">
+        <Parent guid="GuidVisualStudioXAMLWindowContextMenu" id="IDVisualStudioXAMLWindowContextMenu" />
+      </Group>
+
+      <Group guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextASPXWindowSubGroup" priority="0x0100">
+        <Parent guid="GuidCodeRombaMenuSet" id="MenuIDCodeRombaContextASPXWindowMenu" />
+      </Group>
+      <Group guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextASPXCodeWindowSubGroup" priority="0x0100">
+        <Parent guid="GuidCodeRombaMenuSet" id="MenuIDCodeRombaContextASPXCodeWindowMenu" />
+      </Group>
+      <Group guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextCodeWindowSubGroup" priority="0x0100">
+        <Parent guid="GuidCodeRombaMenuSet" id="MenuIDCodeRombaContextCodeWindowMenu" />
+      </Group>
+      <Group guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextCSSWindowSubGroup" priority="0x0100">
+        <Parent guid="GuidCodeRombaMenuSet" id="MenuIDCodeRombaContextCSSWindowMenu" />
+      </Group>
+      <Group guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextCSSDocumentSubGroup" priority="0x0100">
+        <Parent guid="GuidCodeRombaMenuSet" id="MenuIDCodeRombaContextCSSDocumentMenu" />
+      </Group>
+      <Group guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextHTMLWindowSubGroup" priority="0x0100">
+        <Parent guid="GuidCodeRombaMenuSet" id="MenuIDCodeRombaContextHTMLWindowMenu" />
+      </Group>
+      <Group guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextHTMLDocumentSubGroup" priority="0x0100">
+        <Parent guid="GuidCodeRombaMenuSet" id="MenuIDCodeRombaContextHTMLDocumentMenu" />
+      </Group>
+      <Group guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextJSONDocumentSubGroup" priority="0x0100">
+        <Parent guid="GuidCodeRombaMenuSet" id="MenuIDCodeRombaContextJSONDocumentMenu" />
+      </Group>
+      <Group guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextScriptWindowSubGroup" priority="0x0100">
+        <Parent guid="GuidCodeRombaMenuSet" id="MenuIDCodeRombaContextScriptWindowMenu" />
+      </Group>
+      <Group guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextXAMLWindowSubGroup" priority="0x0100">
+        <Parent guid="GuidCodeRombaMenuSet" id="MenuIDCodeRombaContextXAMLWindowMenu" />
+      </Group>
+
+      <Group guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextSolutionNodeGroup" priority="0x0100">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_SOLNNODE" />
+      </Group>
+      <Group guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextSolutionFolderGroup" priority="0x0100">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_SOLNFOLDER" />
+      </Group>
+      <Group guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextProjectNodeGroup" priority="0x0100">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_PROJNODE" />
+      </Group>
+      <Group guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextFolderNodeGroup" priority="0x0100">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_FOLDERNODE" />
+      </Group>
+      <Group guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextItemNodeGroup" priority="0x0100">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_ITEMNODE" />
+      </Group>
+      <Group guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextCrossProjectSolutionProjectGroup" priority="0x0100">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_XPROJ_SLNPROJ" />
+      </Group>
+      <Group guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextCrossProjectSolutionItemGroup" priority="0x0100">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_XPROJ_SLNITEM" />
+      </Group>
+      <Group guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextCrossProjectProjectItemGroup" priority="0x0100">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_XPROJ_PROJITEM" />
+      </Group>
+      <Group guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextCrossProjectMultiProjectGroup" priority="0x0100">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_XPROJ_MULTIPROJ" />
+      </Group>
+      <Group guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextCrossProjectMultiItemGroup" priority="0x0100">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_XPROJ_MULTIITEM" />
+      </Group>
+      <Group guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextCrossProjectMultiSolutionFolderGroup" priority="0x0100">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_XPROJ_MULTIFOLDER" />
+      </Group>
+      <Group guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextCrossProjectMultiProjectFolderGroup" priority="0x0100">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_XPROJ_MULTIPROJFLDR" />
+      </Group>
+    </Groups>
+
+    <!--The bitmaps section is used to define the bitmaps that are used for the commands.-->
+    <Bitmaps>
+      <!--  The bitmap id is defined in a way that is a little bit different from the others:
+            the declaration starts with a guid for the bitmap strip, then there is the resource id of the
+            bitmap strip containing the bitmaps and then there are the numeric ids of the elements used
+            inside a button definition. An important aspect of this declaration is that the element id
+            must be the actual index (1-based) of the bitmap inside the bitmap strip. -->
+      <Bitmap guid="GuidImageCleanup" href="Integration\Images\IDE\cleanup.bmp" usedList="IconCleanup" />
+      <Bitmap guid="GuidImageCleanupAll" href="Integration\Images\IDE\cleanupAll.bmp" usedList="IconCleanupAll" />
+      <Bitmap guid="GuidImageCloseLocked" href="Integration\Images\IDE\closeLocked.bmp" usedList="IconCloseLocked" />
+      <Bitmap guid="GuidImageCollapse" href="Integration\Images\IDE\collapse.bmp" usedList="IconCollapse" />
+      <Bitmap guid="GuidImageCommentFormat" href="Integration\Images\IDE\commentformat.bmp" usedList="IconCommentFormat" />
+      <Bitmap guid="GuidImageFind" href="Integration\Images\IDE\find.bmp" usedList="IconFind" />
+      <Bitmap guid="GuidImageInfo" href="Integration\Images\IDE\info.bmp" usedList="IconInfo" />
+      <Bitmap guid="GuidImageJoin" href="Integration\Images\IDE\join.bmp" usedList="IconJoin" />
+      <Bitmap guid="GuidImageLock" href="Integration\Images\IDE\lock.bmp" usedList="IconLock" />
+      <Bitmap guid="GuidImageOptions" href="Integration\Images\IDE\options.bmp" usedList="IconOptions" />
+      <Bitmap guid="GuidImageProgress" href="Integration\Images\IDE\progress.bmp" usedList="IconProgress" />
+      <Bitmap guid="GuidImageRefresh" href="Integration\Images\IDE\refresh.bmp" usedList="IconRefresh" />
+      <Bitmap guid="GuidImageRemoveRegion" href="Integration\Images\IDE\removeRegion.bmp" usedList="IconRemoveRegion" />
+      <Bitmap guid="GuidImageReorganize" href="Integration\Images\IDE\reorganize.bmp" usedList="IconReorganize" />
+      <Bitmap guid="GuidImageSortAlpha" href="Integration\Images\IDE\sortAlpha.bmp" usedList="IconSortAlpha" />
+      <Bitmap guid="GuidImageSortNumeric" href="Integration\Images\IDE\sortNumeric.bmp" usedList="IconSortNumeric" />
+      <Bitmap guid="GuidImageSortType" href="Integration\Images\IDE\sortType.bmp" usedList="IconSortType" />
+      <Bitmap guid="GuidImageSpade" href="Integration\Images\IDE\spade.bmp" usedList="IconSpade" />
+      <Bitmap guid="GuidImageSwitch" href="Integration\Images\IDE\switch.bmp" usedList="IconSwitch" />
+      <Bitmap guid="GuidImageUnlock" href="Integration\Images\IDE\unlock.bmp" usedList="IconUnlock" />
+    </Bitmaps>
+  </Commands>
+
+  <CommandPlacements>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaAbout" priority="0x0400">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaMenuMetaGroup" />
+    </CommandPlacement>
+
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaBuildProgressToolWindow" priority="0x0200">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaMenuVisualizeGroup" />
+    </CommandPlacement>
+
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaCleanupActiveCode" priority="0x0200">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaMenuCleanupGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaCleanupActiveCode" priority="0x0200">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextCodeWindowSubGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaCleanupActiveCode" priority="0x0200">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextASPXWindowSubGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaCleanupActiveCode" priority="0x0200">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextASPXCodeWindowSubGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaCleanupActiveCode" priority="0x0200">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextCSSWindowSubGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaCleanupActiveCode" priority="0x0200">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextCSSDocumentSubGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaCleanupActiveCode" priority="0x0200">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextHTMLWindowSubGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaCleanupActiveCode" priority="0x0200">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextHTMLDocumentSubGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaCleanupActiveCode" priority="0x0200">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextJSONDocumentSubGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaCleanupActiveCode" priority="0x0200">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextScriptWindowSubGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaCleanupActiveCode" priority="0x0200">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextXAMLWindowSubGroup" />
+    </CommandPlacement>
+
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaCleanupAllCode" priority="0x0600">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaMenuCleanupGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaCleanupAllCode" priority="0x0200">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextSolutionNodeGroup" />
+    </CommandPlacement>
+
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaCleanupOpenCode" priority="0x0400">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaMenuCleanupGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaCleanupOpenCode" priority="0x0200">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextDocumentTabGroup" />
+    </CommandPlacement>
+
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaCleanupSelectedCode" priority="0x0200">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextSolutionFolderGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaCleanupSelectedCode" priority="0x0200">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextProjectNodeGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaCleanupSelectedCode" priority="0x0200">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextFolderNodeGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaCleanupSelectedCode" priority="0x0200">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextItemNodeGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaCleanupSelectedCode" priority="0x0200">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextCrossProjectSolutionProjectGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaCleanupSelectedCode" priority="0x0200">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextCrossProjectSolutionItemGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaCleanupSelectedCode" priority="0x0200">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextCrossProjectProjectItemGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaCleanupSelectedCode" priority="0x0200">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextCrossProjectMultiProjectGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaCleanupSelectedCode" priority="0x0200">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextCrossProjectMultiItemGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaCleanupSelectedCode" priority="0x0200">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextCrossProjectMultiSolutionFolderGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaCleanupSelectedCode" priority="0x0200">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextCrossProjectMultiProjectFolderGroup" />
+    </CommandPlacement>
+
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaCloseAllReadOnly" priority="0x0200">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaMenuDocumentGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaCloseAllReadOnly" priority="0x0600">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextDocumentTabGroup" />
+    </CommandPlacement>
+
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaCollapseAllSolutionExplorer" priority="0x0200">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaMenuSolutionExplorerGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaCollapseAllSolutionExplorer" priority="0x0400">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextSolutionNodeGroup" />
+    </CommandPlacement>
+
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaCollapseSelectedSolutionExplorer" priority="0x0400">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextSolutionFolderGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaCollapseSelectedSolutionExplorer" priority="0x0400">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextProjectNodeGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaCollapseSelectedSolutionExplorer" priority="0x0400">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextFolderNodeGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaCollapseSelectedSolutionExplorer" priority="0x0400">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextItemNodeGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaCollapseSelectedSolutionExplorer" priority="0x0400">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextCrossProjectSolutionProjectGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaCollapseSelectedSolutionExplorer" priority="0x0400">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextCrossProjectSolutionItemGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaCollapseSelectedSolutionExplorer" priority="0x0400">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextCrossProjectProjectItemGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaCollapseSelectedSolutionExplorer" priority="0x0400">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextCrossProjectMultiProjectGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaCollapseSelectedSolutionExplorer" priority="0x0400">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextCrossProjectMultiItemGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaCollapseSelectedSolutionExplorer" priority="0x0400">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextCrossProjectMultiSolutionFolderGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaCollapseSelectedSolutionExplorer" priority="0x0400">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextCrossProjectMultiProjectFolderGroup" />
+    </CommandPlacement>
+
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaCommentFormat" priority="0x0200">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaMenuExtendGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaCommentFormat" priority="0x0400">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextCodeWindowSubGroup" />
+    </CommandPlacement>
+
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaFindInSolutionExplorer" priority="0x0400">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaMenuSolutionExplorerGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaFindInSolutionExplorer" priority="0x0300">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextCodeWindowSubGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaFindInSolutionExplorer" priority="0x0300">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextASPXWindowSubGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaFindInSolutionExplorer" priority="0x0300">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextASPXCodeWindowSubGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaFindInSolutionExplorer" priority="0x0300">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextCSSWindowSubGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaFindInSolutionExplorer" priority="0x0300">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextCSSDocumentSubGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaFindInSolutionExplorer" priority="0x0400">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextDocumentTabGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaFindInSolutionExplorer" priority="0x0300">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextHTMLWindowSubGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaFindInSolutionExplorer" priority="0x0300">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextHTMLDocumentSubGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaFindInSolutionExplorer" priority="0x0300">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextJSONDocumentSubGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaFindInSolutionExplorer" priority="0x0300">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextScriptWindowSubGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaFindInSolutionExplorer" priority="0x0300">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextXAMLWindowSubGroup" />
+    </CommandPlacement>
+
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaJoinLines" priority="0x0400">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaMenuExtendGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaJoinLines" priority="0x0500">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextCodeWindowSubGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaJoinLines" priority="0x0400">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextASPXWindowSubGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaJoinLines" priority="0x0400">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextASPXCodeWindowSubGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaJoinLines" priority="0x0400">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextCSSWindowSubGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaJoinLines" priority="0x0400">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextCSSDocumentSubGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaJoinLines" priority="0x0400">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextHTMLWindowSubGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaJoinLines" priority="0x0400">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextHTMLDocumentSubGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaJoinLines" priority="0x0400">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextJSONDocumentSubGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaJoinLines" priority="0x0400">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextScriptWindowSubGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaJoinLines" priority="0x0400">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextXAMLWindowSubGroup" />
+    </CommandPlacement>
+
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaOptions" priority="0x0200">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaMenuMetaGroup" />
+    </CommandPlacement>
+
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaReadOnlyToggle" priority="0x0400">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaMenuDocumentGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaReadOnlyToggle" priority="0x0800">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextDocumentTabGroup" />
+    </CommandPlacement>
+
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaRemoveRegion" priority="0x0500">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaMenuExtendGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaRemoveRegion" priority="0x0600">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextCodeWindowSubGroup" />
+    </CommandPlacement>
+
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaReorganizeActiveCode" priority="0x0600">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaMenuExtendGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaReorganizeActiveCode" priority="0x0700">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextCodeWindowSubGroup" />
+    </CommandPlacement>
+
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaSettingCleanupOnSave" priority="0x0800">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaMenuCleanupGroup" />
+    </CommandPlacement>
+
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaSortLines" priority="0x0700">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaMenuExtendGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaSortLines" priority="0x0800">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextCodeWindowSubGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaSortLines" priority="0x0700">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextASPXWindowSubGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaSortLines" priority="0x0700">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextASPXCodeWindowSubGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaSortLines" priority="0x0700">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextCSSWindowSubGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaSortLines" priority="0x0700">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextCSSDocumentSubGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaSortLines" priority="0x0700">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextHTMLWindowSubGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaSortLines" priority="0x0700">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextHTMLDocumentSubGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaSortLines" priority="0x0700">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextJSONDocumentSubGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaSortLines" priority="0x0700">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextScriptWindowSubGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaSortLines" priority="0x0700">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextXAMLWindowSubGroup" />
+    </CommandPlacement>
+
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaSpadeContextDelete" priority="0x0200">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextSpadeDeleteGroup" />
+    </CommandPlacement>
+
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaSpadeContextFindReferences" priority="0x0200">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextSpadeFindGroup" />
+    </CommandPlacement>
+
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaSpadeContextInsertRegion" priority="0x0400">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextSpadeInsertGroup" />
+    </CommandPlacement>
+
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaSpadeContextRemoveRegion" priority="0x0600">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextSpadeDeleteGroup" />
+    </CommandPlacement>
+
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaSpadeOptions" priority="0x0100">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaToolbarSpadeMetaGroup" />
+    </CommandPlacement>
+
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaSpadeRefresh" priority="0x0200">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaToolbarSpadeRefreshGroup" />
+    </CommandPlacement>
+
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaSpadeSortOrderAlpha" priority="0x0600">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaToolbarSpadeSortOrderGroup" />
+    </CommandPlacement>
+
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaSpadeSortOrderFile" priority="0x0200">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaToolbarSpadeSortOrderGroup" />
+    </CommandPlacement>
+
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaSpadeSortOrderType" priority="0x0400">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaToolbarSpadeSortOrderGroup" />
+    </CommandPlacement>
+
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaSpadeToolWindow" priority="0x0400">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaMenuVisualizeGroup" />
+    </CommandPlacement>
+
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaSwitchFile" priority="0x0800">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaMenuExtendGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaSwitchFile" priority="0x0900">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextCodeWindowSubGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaSwitchFile" priority="0x0800">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextASPXWindowSubGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaSwitchFile" priority="0x0800">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextASPXCodeWindowSubGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaSwitchFile" priority="0x0800">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextCSSWindowSubGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaSwitchFile" priority="0x0800">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextCSSDocumentSubGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaSwitchFile" priority="0x0800">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextHTMLWindowSubGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaSwitchFile" priority="0x0800">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextHTMLDocumentSubGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaSwitchFile" priority="0x0800">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextJSONDocumentSubGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaSwitchFile" priority="0x0800">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextScriptWindowSubGroup" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaSwitchFile" priority="0x0800">
+      <Parent guid="GuidCodeRombaMenuSet" id="GroupIDCodeRombaContextXAMLWindowSubGroup" />
+    </CommandPlacement>
+  </CommandPlacements>
+
+  <KeyBindings>
+    <KeyBinding guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaCleanupActiveCode" editor="guidVSStd97" key1="M" mod1="Control" key2="VK_SPACE" mod2="Control" />
+    <KeyBinding guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaCleanupActiveCode" editor="guidVSStd97" key1="M" mod1="Control" key2="VK_SPACE" />
+
+    <KeyBinding guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaCollapseAllSolutionExplorer" editor="guidVSStd97" key1="M" mod1="Control" key2="0xBD" mod2="Control" />
+    <KeyBinding guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaCollapseAllSolutionExplorer" editor="guidVSStd97" key1="M" mod1="Control" key2="0xBD" />
+
+    <KeyBinding guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaCommentFormat" editor="guidVSStd97" key1="M" mod1="Control" key2="N" mod2="Control" />
+    <KeyBinding guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaCommentFormat" editor="guidVSStd97" key1="M" mod1="Control" key2="N" />
+
+    <KeyBinding guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaFindInSolutionExplorer" editor="guidVSStd97" key1="M" mod1="Control" key2="F" mod2="Control" />
+    <KeyBinding guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaFindInSolutionExplorer" editor="guidVSStd97" key1="M" mod1="Control" key2="F" />
+
+    <KeyBinding guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaJoinLines" editor="guidVSStd97" key1="M" mod1="Control" key2="J" mod2="Control" />
+    <KeyBinding guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaJoinLines" editor="guidVSStd97" key1="M" mod1="Control" key2="J" />
+
+    <KeyBinding guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaOptions" editor="guidVSStd97" key1="M" mod1="Control" key2="0xBF" mod2="Control" />
+    <KeyBinding guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaOptions" editor="guidVSStd97" key1="M" mod1="Control" key2="0xBF" />
+
+    <KeyBinding guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaRemoveRegion" editor="guidVSStd97" key1="M" mod1="Control" key2="R" mod2="Control" />
+    <KeyBinding guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaRemoveRegion" editor="guidVSStd97" key1="M" mod1="Control" key2="R" />
+
+    <KeyBinding guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaReorganizeActiveCode" editor="guidVSStd97" key1="M" mod1="Control" key2="Z" mod2="Control" />
+    <KeyBinding guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaReorganizeActiveCode" editor="guidVSStd97" key1="M" mod1="Control" key2="Z" />
+
+    <KeyBinding guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaSettingCleanupOnSave" editor="guidVSStd97" key1="M" mod1="Control" key2="VK_OEM_7" mod2="Control" />
+    <KeyBinding guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaSettingCleanupOnSave" editor="guidVSStd97" key1="M" mod1="Control" key2="VK_OEM_7" />
+
+    <KeyBinding guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaSortLines" editor="guidVSStd97" key1="M" mod1="Control" key2="VK_F9" mod2="Control" />
+    <KeyBinding guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaSortLines" editor="guidVSStd97" key1="M" mod1="Control" key2="VK_F9" />
+
+    <KeyBinding guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaSpadeRefresh" editor="guidVSStd97" key1="M" mod1="Control" key2="0xBA" mod2="Shift" />
+
+    <KeyBinding guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaSpadeSearch" editor="guidVSStd97" key1="M" mod1="Control" key2="0xBA" mod2="Control" />
+    <KeyBinding guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaSpadeSearch" editor="guidVSStd97" key1="M" mod1="Control" key2="0xBA" />
+
+    <KeyBinding guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaSpadeToolWindow" editor="guidVSStd97" key1="M" mod1="Control" key2="0xBE" mod2="Control" />
+    <KeyBinding guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaSpadeToolWindow" editor="guidVSStd97" key1="M" mod1="Control" key2="0xBE" />
+
+    <KeyBinding guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaSwitchFile" editor="guidVSStd97" key1="M" mod1="Control" key2="0xBC" mod2="Control" />
+    <KeyBinding guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaSwitchFile" editor="guidVSStd97" key1="M" mod1="Control" key2="0xBC" />
+  </KeyBindings>
+
+  <Symbols>
+    <!-- These are Visual Studio constants not found in SDK header files (found via VSIPLogging) -->
+    <GuidSymbol name="GuidVisualStudioCSSWindowContextMenu" value="{a764e896-518d-11d2-9a89-00c04f79efc3}">
+      <IDSymbol name="IDVisualStudioCSSWindowContextMenu" value="0x102" />
+    </GuidSymbol>
+    <GuidSymbol name="GuidVisualStudioCSSDocumentContextMenu" value="{64da400e-b4ad-4d67-aa92-4b7acb01ecd5}">
+      <IDSymbol name="IDVisualStudioCSSDocumentContextMenu" value="0x2" />
+    </GuidSymbol>
+    <GuidSymbol name="GuidVisualStudioHTMLWindowContextMenu" value="{d7e8c5e1-bdb8-11d0-9c88-0000f8040a53}">
+      <IDSymbol name="IDVisualStudioASPXWindowContextMenu" value="0x35" />
+      <IDSymbol name="IDVisualStudioASPXCodeWindowContextMenu" value="0x36" />
+      <IDSymbol name="IDVisualStudioHTMLWindowContextMenu" value="0x33" />
+      <IDSymbol name="IDVisualStudioScriptWindowContextMenu" value="0x34" />
+    </GuidSymbol>
+    <GuidSymbol name="GuidVisualStudioHTMLDocumentContextMenu" value="{78f03954-2fb8-4087-8ce7-59d71710b3bb}">
+      <IDSymbol name="IDVisualStudioHTMLDocumentContextMenu" value="0x1" />
+    </GuidSymbol>
+    <GuidSymbol name="GuidVisualStudioJSONDocumentContextMenu" value="{f718ca06-cf4f-4a0c-9106-e79e9ee5e7cd}">
+      <IDSymbol name="IDVisualStudioJSONDocumentContextMenu" value="0x3" />
+    </GuidSymbol>
+    <GuidSymbol name="GuidVisualStudioXAMLWindowContextMenu" value="{4c87b692-1202-46aa-b64c-ef01faec53da}">
+      <IDSymbol name="IDVisualStudioXAMLWindowContextMenu" value="0x103" />
+    </GuidSymbol>
+
+    <!-- This is the package guid. -->
+    <GuidSymbol name="GuidCodeRombaPackage" value="{4c82e17d-927e-42d2-8460-b473ac7df316}" />
+
+    <!-- These are the tool window guids -->
+    <GuidSymbol name="GuidCodeRombaToolWindowBuildProgress" value="{260978c3-582c-487d-ab12-c1fdde07c578}" />
+    <GuidSymbol name="GuidCodeRombaToolWindowSpade" value="{75d09b86-471e-4b30-8720-362d13ad0a45}" />
+
+    <!-- This is the output pane guid -->
+    <GuidSymbol name="GuidCodeRombaOutputPane" value="{4e7ba904-9311-4dd0-abe5-a61c1739780f}" />
+
+    <!-- These are the symbols for all menu items provided by CodeRomba -->
+    <GuidSymbol name="GuidCodeRombaMenuSet" value="{369b04df-0688-4074-911d-d0d6c6a31632}">
+      <!-- This is the id used to group the menu commands together -->
+      <IDSymbol name="GroupIDCodeRombaMenuBaseGroup" value="0x1020" />
+
+      <!-- These are the command sets for the menu -->
+      <IDSymbol name="GroupIDCodeRombaMenuCleanupGroup" value="0x1021" />
+      <IDSymbol name="GroupIDCodeRombaMenuDocumentGroup" value="0x1022" />
+      <IDSymbol name="GroupIDCodeRombaMenuExtendGroup" value="0x1023" />
+      <IDSymbol name="GroupIDCodeRombaMenuMetaGroup" value="0x1024" />
+      <IDSymbol name="GroupIDCodeRombaMenuSolutionExplorerGroup" value="0x1025" />
+      <IDSymbol name="GroupIDCodeRombaMenuVisualizeGroup" value="0x1026" />
+
+      <!-- This is the id used to group the Spade toolbar commands together -->
+      <IDSymbol name="ToolbarIDCodeRombaToolbarSpade" value="0x1040" />
+      <IDSymbol name="GroupIDCodeRombaToolbarSpadeBaseGroup" value="0x1041" />
+
+      <!-- These are the command sets for the Spade toolbar -->
+      <IDSymbol name="GroupIDCodeRombaToolbarSpadeRefreshGroup" value="0x1042" />
+      <IDSymbol name="GroupIDCodeRombaToolbarSpadeSortOrderGroup" value="0x1043" />
+      <IDSymbol name="GroupIDCodeRombaToolbarSpadeMetaGroup" value="0x1045" />
+
+      <!-- This is the id used to group the Spade context menu commands together -->
+      <IDSymbol name="MenuIDCodeRombaContextSpade" value="0x1060" />
+      <IDSymbol name="GroupIDCodeRombaContextSpadeBaseGroup" value="0x1061" />
+
+      <!-- These are the command sets for the Spade context menu -->
+      <IDSymbol name="GroupIDCodeRombaContextSpadeFindGroup" value="0x1062" />
+      <IDSymbol name="GroupIDCodeRombaContextSpadeDeleteGroup" value="0x1063" />
+      <IDSymbol name="GroupIDCodeRombaContextSpadeInsertGroup" value="0x1064" />
+
+      <!-- These are the command sets for the solution explorer context menus -->
+      <IDSymbol name="GroupIDCodeRombaContextSolutionNodeGroup" value="0x1050" />
+      <IDSymbol name="GroupIDCodeRombaContextSolutionFolderGroup" value="0x1051" />
+      <IDSymbol name="GroupIDCodeRombaContextProjectNodeGroup" value="0x1052" />
+      <IDSymbol name="GroupIDCodeRombaContextFolderNodeGroup" value="0x1053" />
+      <IDSymbol name="GroupIDCodeRombaContextItemNodeGroup" value="0x1054" />
+      <IDSymbol name="GroupIDCodeRombaContextCrossProjectSolutionProjectGroup" value="0x1055" />
+      <IDSymbol name="GroupIDCodeRombaContextCrossProjectSolutionItemGroup" value="0x1056" />
+      <IDSymbol name="GroupIDCodeRombaContextCrossProjectProjectItemGroup" value="0x1057" />
+      <IDSymbol name="GroupIDCodeRombaContextCrossProjectMultiProjectGroup" value="0x1058" />
+      <IDSymbol name="GroupIDCodeRombaContextCrossProjectMultiItemGroup" value="0x1059" />
+      <IDSymbol name="GroupIDCodeRombaContextCrossProjectMultiSolutionFolderGroup" value="0x105a" />
+      <IDSymbol name="GroupIDCodeRombaContextCrossProjectMultiProjectFolderGroup" value="0x105b" />
+
+      <!-- This is the command set for the document tab context menu -->
+      <IDSymbol name="GroupIDCodeRombaContextDocumentTabGroup" value="0x1070" />
+
+      <!-- These are the command sets for the document context menu groups -->
+      <IDSymbol name="GroupIDCodeRombaContextASPXWindowGroup" value="0x1080" />
+      <IDSymbol name="GroupIDCodeRombaContextASPXCodeWindowGroup" value="0x1081" />
+      <IDSymbol name="GroupIDCodeRombaContextCodeWindowGroup" value="0x1082" />
+      <IDSymbol name="GroupIDCodeRombaContextCSSWindowGroup" value="0x1083" />
+      <IDSymbol name="GroupIDCodeRombaContextCSSDocumentGroup" value="0x1084" />
+      <IDSymbol name="GroupIDCodeRombaContextHTMLWindowGroup" value="0x1085" />
+      <IDSymbol name="GroupIDCodeRombaContextHTMLDocumentGroup" value="0x1086" />
+      <IDSymbol name="GroupIDCodeRombaContextJSONDocumentGroup" value="0x1087" />
+      <IDSymbol name="GroupIDCodeRombaContextScriptWindowGroup" value="0x1088" />
+      <IDSymbol name="GroupIDCodeRombaContextXAMLWindowGroup" value="0x1089" />
+
+      <!-- These are the command sets for the document context menus -->
+      <IDSymbol name="MenuIDCodeRombaContextASPXWindowMenu" value="0x1090" />
+      <IDSymbol name="MenuIDCodeRombaContextASPXCodeWindowMenu" value="0x1091" />
+      <IDSymbol name="MenuIDCodeRombaContextCodeWindowMenu" value="0x1092" />
+      <IDSymbol name="MenuIDCodeRombaContextCSSWindowMenu" value="0x1093" />
+      <IDSymbol name="MenuIDCodeRombaContextCSSDocumentMenu" value="0x1094" />
+      <IDSymbol name="MenuIDCodeRombaContextHTMLWindowMenu" value="0x1095" />
+      <IDSymbol name="MenuIDCodeRombaContextHTMLDocumentMenu" value="0x1096" />
+      <IDSymbol name="MenuIDCodeRombaContextJSONDocumentMenu" value="0x1097" />
+      <IDSymbol name="MenuIDCodeRombaContextScriptWindowMenu" value="0x1098" />
+      <IDSymbol name="MenuIDCodeRombaContextXAMLWindowMenu" value="0x1099" />
+
+      <!-- These are the command sets for the document context menu sub groups -->
+      <IDSymbol name="GroupIDCodeRombaContextASPXWindowSubGroup" value="0x10a0" />
+      <IDSymbol name="GroupIDCodeRombaContextASPXCodeWindowSubGroup" value="0x10a1" />
+      <IDSymbol name="GroupIDCodeRombaContextCodeWindowSubGroup" value="0x10a2" />
+      <IDSymbol name="GroupIDCodeRombaContextCSSWindowSubGroup" value="0x10a3" />
+      <IDSymbol name="GroupIDCodeRombaContextCSSDocumentSubGroup" value="0x10a4" />
+      <IDSymbol name="GroupIDCodeRombaContextHTMLWindowSubGroup" value="0x10a5" />
+      <IDSymbol name="GroupIDCodeRombaContextHTMLDocumentSubGroup" value="0x10a6" />
+      <IDSymbol name="GroupIDCodeRombaContextJSONDocumentSubGroup" value="0x10a7" />
+      <IDSymbol name="GroupIDCodeRombaContextScriptWindowSubGroup" value="0x10a8" />
+      <IDSymbol name="GroupIDCodeRombaContextXAMLWindowSubGroup" value="0x10a9" />
+
+      <!-- These are the symbols for the individual commands -->
+      <IDSymbol name="CmdIDCodeRombaAbout" value="0x1000" />
+      <IDSymbol name="CmdIDCodeRombaBuildProgressToolWindow" value="0x1100" />
+      <IDSymbol name="CmdIDCodeRombaCleanupActiveCode" value="0x1200" />
+      <IDSymbol name="CmdIDCodeRombaCleanupAllCode" value="0x1300" />
+      <IDSymbol name="CmdIDCodeRombaCleanupOpenCode" value="0x1400" />
+      <IDSymbol name="CmdIDCodeRombaCleanupSelectedCode" value="0x1500" />
+      <IDSymbol name="CmdIDCodeRombaCloseAllReadOnly" value="0x1600" />
+      <IDSymbol name="CmdIDCodeRombaCollapseAllSolutionExplorer" value="0x1700" />
+      <IDSymbol name="CmdIDCodeRombaCollapseSelectedSolutionExplorer" value="0x1800" />
+      <IDSymbol name="CmdIDCodeRombaCommentFormat" value="0x1900" />
+      <IDSymbol name="CmdIDCodeRombaFindInSolutionExplorer" value="0x2000" />
+      <IDSymbol name="CmdIDCodeRombaJoinLines" value="0x2100" />
+      <IDSymbol name="CmdIDCodeRombaOptions" value="0x2200" />
+      <IDSymbol name="CmdIDCodeRombaReadOnlyToggle" value="0x2300" />
+      <IDSymbol name="CmdIDCodeRombaRemoveRegion" value="0x2400" />
+      <IDSymbol name="CmdIDCodeRombaReorganizeActiveCode" value="0x2500" />
+      <IDSymbol name="CmdIDCodeRombaSettingCleanupOnSave" value="0x2600" />
+      <IDSymbol name="CmdIDCodeRombaSortLines" value="0x2700" />
+      <IDSymbol name="CmdIDCodeRombaSpadeContextDelete" value="0x2800" />
+      <IDSymbol name="CmdIDCodeRombaSpadeContextFindReferences" value="0x2900" />
+      <IDSymbol name="CmdIDCodeRombaSpadeContextInsertRegion" value="0x3000" />
+      <IDSymbol name="CmdIDCodeRombaSpadeContextRemoveRegion" value="0x3100" />
+      <IDSymbol name="CmdIDCodeRombaSpadeOptions" value="0x3200" />
+      <IDSymbol name="CmdIDCodeRombaSpadeRefresh" value="0x3300" />
+      <IDSymbol name="CmdIDCodeRombaSpadeSearch" value="0x3400" />
+      <IDSymbol name="CmdIDCodeRombaSpadeSortOrderAlpha" value="0x3500" />
+      <IDSymbol name="CmdIDCodeRombaSpadeSortOrderFile" value="0x3600" />
+      <IDSymbol name="CmdIDCodeRombaSpadeSortOrderType" value="0x3700" />
+      <IDSymbol name="CmdIDCodeRombaSpadeToolWindow" value="0x3800" />
+      <IDSymbol name="CmdIDCodeRombaSwitchFile" value="0x3900" />
+    </GuidSymbol>
+
+    <!-- These are the guids for images -->
+    <GuidSymbol name="GuidImageCleanup" value="{54aa78c8-285a-4166-9eba-369dde5d787e}">
+      <IDSymbol name="IconCleanup" value="1" />
+    </GuidSymbol>
+    <GuidSymbol name="GuidImageCleanupAll" value="{e3d926ae-03d7-4c69-8226-440eeddab292}">
+      <IDSymbol name="IconCleanupAll" value="1" />
+    </GuidSymbol>
+    <GuidSymbol name="GuidImageCloseLocked" value="{02ee894b-084c-4ccb-8a67-5f236b5df68b}">
+      <IDSymbol name="IconCloseLocked" value="1" />
+    </GuidSymbol>
+    <GuidSymbol name="GuidImageCollapse" value="{c853fa86-98f3-4f30-89f4-913d84c34a29}">
+      <IDSymbol name="IconCollapse" value="1" />
+    </GuidSymbol>
+    <GuidSymbol name="GuidImageCommentFormat" value="{512526cf-2bb2-47fc-88af-dbd3678fe428}">
+      <IDSymbol name="IconCommentFormat" value="1" />
+    </GuidSymbol>
+    <GuidSymbol name="GuidImageFind" value="{d83e7fab-c902-4348-9828-6931df5f9dd4}">
+      <IDSymbol name="IconFind" value="1" />
+    </GuidSymbol>
+    <GuidSymbol name="GuidImageInfo" value="{0c75ffd4-f452-47c7-a36b-3179b6d6309f}">
+      <IDSymbol name="IconInfo" value="1" />
+    </GuidSymbol>
+    <GuidSymbol name="GuidImageJoin" value="{e6e6dcd8-accc-4552-890b-a68ef0cf7279}">
+      <IDSymbol name="IconJoin" value="1" />
+    </GuidSymbol>
+    <GuidSymbol name="GuidImageLock" value="{f21ca5ca-1dd5-4d93-995b-499d6ad2c30e}">
+      <IDSymbol name="IconLock" value="1" />
+    </GuidSymbol>
+    <GuidSymbol name="GuidImageOptions" value="{a81c0e9b-bfdf-4b2f-a7ba-ca7e3183658a}">
+      <IDSymbol name="IconOptions" value="1" />
+    </GuidSymbol>
+    <GuidSymbol name="GuidImageProgress" value="{57d334e8-69fb-4554-8632-3fd5be77e45e}">
+      <IDSymbol name="IconProgress" value="1" />
+    </GuidSymbol>
+    <GuidSymbol name="GuidImageRefresh" value="{fad83984-8b84-4176-98a0-7bd92ef7b3be}">
+      <IDSymbol name="IconRefresh" value="1" />
+    </GuidSymbol>
+    <GuidSymbol name="GuidImageRemoveRegion" value="{0130de2e-d65e-4e8f-b424-1a7ee90acd29}">
+      <IDSymbol name="IconRemoveRegion" value="1" />
+    </GuidSymbol>
+    <GuidSymbol name="GuidImageReorganize" value="{8591e1d2-3204-4e9d-9789-c8de79bc5313}">
+      <IDSymbol name="IconReorganize" value="1" />
+    </GuidSymbol>
+    <GuidSymbol name="GuidImageSortAlpha" value="{735bc8ba-0eaf-4fa3-a8ce-6f2e23c615b6}">
+      <IDSymbol name="IconSortAlpha" value="1" />
+    </GuidSymbol>
+    <GuidSymbol name="GuidImageSortNumeric" value="{f5ae9c2c-0174-4cd0-bb8c-b62043da5d0d}">
+      <IDSymbol name="IconSortNumeric" value="1" />
+    </GuidSymbol>
+    <GuidSymbol name="GuidImageSortType" value="{b46f9a94-256d-48d2-84f6-3b3fbe4a1afa}">
+      <IDSymbol name="IconSortType" value="1" />
+    </GuidSymbol>
+    <GuidSymbol name="GuidImageSpade" value="{24791b87-377a-4661-8c0a-3754eadaff5c}">
+      <IDSymbol name="IconSpade" value="1" />
+    </GuidSymbol>
+    <GuidSymbol name="GuidImageSwitch" value="{f86e7cf5-34e4-4f45-a8c3-9528b6e49a12}">
+      <IDSymbol name="IconSwitch" value="1" />
+    </GuidSymbol>
+    <GuidSymbol name="GuidImageUnlock" value="{6c3e76ea-326a-4201-aa74-fb2b9b8ccb0f}">
+      <IDSymbol name="IconUnlock" value="1" />
+    </GuidSymbol>
+  </Symbols>
+</CommandTable>
