@@ -1,6 +1,6 @@
-using WinterbiteStudios.CodeRomba.UI;
 using System;
 using System.Text.RegularExpressions;
+using WinterbiteStudios.CodeRomba.UI;
 
 namespace WinterbiteStudios.CodeRomba.Helpers
 {

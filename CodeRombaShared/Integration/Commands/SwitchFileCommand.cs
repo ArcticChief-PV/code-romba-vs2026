@@ -1,10 +1,10 @@
 using EnvDTE;
-using WinterbiteStudios.CodeRomba.Helpers;
-using WinterbiteStudios.CodeRomba.Properties;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using WinterbiteStudios.CodeRomba.Helpers;
+using WinterbiteStudios.CodeRomba.Properties;
 using Task = System.Threading.Tasks.Task;
 
 namespace WinterbiteStudios.CodeRomba.Integration.Commands

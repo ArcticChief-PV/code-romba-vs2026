@@ -1,6 +1,6 @@
 using EnvDTE;
-using WinterbiteStudios.CodeRomba.UI;
 using System.Diagnostics;
+using WinterbiteStudios.CodeRomba.UI;
 
 namespace WinterbiteStudios.CodeRomba.Model.CodeItems
 {

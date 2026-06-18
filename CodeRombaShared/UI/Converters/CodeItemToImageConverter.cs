@@ -1,9 +1,9 @@
 using EnvDTE;
-using WinterbiteStudios.CodeRomba.Model.CodeItems;
 using System;
 using System.Globalization;
 using System.Windows.Data;
 using System.Windows.Media.Imaging;
+using WinterbiteStudios.CodeRomba.Model.CodeItems;
 
 namespace WinterbiteStudios.CodeRomba.UI.Converters
 {

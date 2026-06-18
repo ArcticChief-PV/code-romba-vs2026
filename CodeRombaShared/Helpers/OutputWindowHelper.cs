@@ -1,7 +1,7 @@
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
-using WinterbiteStudios.CodeRomba.Properties;
 using System;
+using WinterbiteStudios.CodeRomba.Properties;
 
 namespace WinterbiteStudios.CodeRomba.Helpers
 {

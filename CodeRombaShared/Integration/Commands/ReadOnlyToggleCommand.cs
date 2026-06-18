@@ -1,9 +1,9 @@
 using EnvDTE;
-using WinterbiteStudios.CodeRomba.Helpers;
-using WinterbiteStudios.CodeRomba.Properties;
 using System;
 using System.IO;
 using System.Threading.Tasks;
+using WinterbiteStudios.CodeRomba.Helpers;
+using WinterbiteStudios.CodeRomba.Properties;
 
 namespace WinterbiteStudios.CodeRomba.Integration.Commands
 {
@@ -64,7 +64,7 @@ namespace WinterbiteStudios.CodeRomba.Integration.Commands
                 }
                 catch (Exception ex)
                 {
-                    OutputWindowHelper.ExceptionWriteLine($"{ Resources.UnableToToggleReadOnlyStateOn}'{document.FullName}'", ex);
+                    OutputWindowHelper.ExceptionWriteLine($"{Resources.UnableToToggleReadOnlyStateOn}'{document.FullName}'", ex);
                 }
             }
         }

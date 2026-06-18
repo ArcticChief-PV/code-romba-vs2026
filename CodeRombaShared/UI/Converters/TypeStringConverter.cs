@@ -1,7 +1,7 @@
-using WinterbiteStudios.CodeRomba.Helpers;
 using System;
 using System.Globalization;
 using System.Windows.Data;
+using WinterbiteStudios.CodeRomba.Helpers;
 
 namespace WinterbiteStudios.CodeRomba.UI.Converters
 {

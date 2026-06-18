@@ -2,9 +2,9 @@ using EnvDTE;
 using Microsoft.VisualStudio;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
+using System;
 using WinterbiteStudios.CodeRomba.Helpers;
 using WinterbiteStudios.CodeRomba.Properties;
-using System;
 using Task = System.Threading.Tasks.Task;
 
 namespace WinterbiteStudios.CodeRomba.Integration.Commands

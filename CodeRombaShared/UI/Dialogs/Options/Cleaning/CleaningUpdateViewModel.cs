@@ -66,7 +66,7 @@ namespace WinterbiteStudios.CodeRomba.UI.Dialogs.Options.Cleaning
             set { SetPropertyValue(value); }
         }
 
-        #endregion Overrides of OptionsPageViewModel
+        #endregion Options
 
         #region Options
 

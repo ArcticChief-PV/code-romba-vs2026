@@ -1,9 +1,9 @@
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:p="clr-namespace:WinterbiteStudios.CodeRomba.Properties"
-        xmlns:ci="clr-namespace:WinterbiteStudios.CodeRomba.Model.CodeItems"
-        xmlns:cnv="clr-namespace:WinterbiteStudios.CodeRomba.UI.Converters"
-        xmlns:spade="clr-namespace:WinterbiteStudios.CodeRomba.UI.ToolWindows.Spade">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:ci="clr-namespace:WinterbiteStudios.CodeRomba.Model.CodeItems"
+                    xmlns:p="clr-namespace:WinterbiteStudios.CodeRomba.Properties"
+                    xmlns:cnv="clr-namespace:WinterbiteStudios.CodeRomba.UI.Converters"
+                    xmlns:spade="clr-namespace:WinterbiteStudios.CodeRomba.UI.ToolWindows.Spade">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="CodeItemBaseTemplates.xaml" />
     </ResourceDictionary.MergedDictionaries>

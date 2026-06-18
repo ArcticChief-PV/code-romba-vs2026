@@ -1,11 +1,11 @@
 using EnvDTE;
+using System;
+using System.Collections.Generic;
+using System.Windows.Threading;
 using WinterbiteStudios.CodeRomba.Logic.Digging;
 using WinterbiteStudios.CodeRomba.Model.CodeItems;
 using WinterbiteStudios.CodeRomba.Model.CodeTree;
 using WinterbiteStudios.CodeRomba.Properties;
-using System;
-using System.Collections.Generic;
-using System.Windows.Threading;
 
 namespace WinterbiteStudios.CodeRomba.UI.ToolWindows.Spade
 {

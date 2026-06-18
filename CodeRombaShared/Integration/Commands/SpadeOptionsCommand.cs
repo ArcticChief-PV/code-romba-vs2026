@@ -1,6 +1,6 @@
+using System.Threading.Tasks;
 using WinterbiteStudios.CodeRomba.UI.Dialogs.Options;
 using WinterbiteStudios.CodeRomba.UI.Dialogs.Options.Digging;
-using System.Threading.Tasks;
 
 namespace WinterbiteStudios.CodeRomba.Integration.Commands
 {

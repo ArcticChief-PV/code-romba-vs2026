@@ -1,5 +1,5 @@
-using WinterbiteStudios.CodeRomba.Properties;
 using System.Threading.Tasks;
+using WinterbiteStudios.CodeRomba.Properties;
 
 namespace WinterbiteStudios.CodeRomba.Integration.Commands
 {

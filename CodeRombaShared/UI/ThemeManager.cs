@@ -1,12 +1,12 @@
 using EnvDTE80;
-using WinterbiteStudios.CodeRomba.Helpers;
-using WinterbiteStudios.CodeRomba.Properties;
-using WinterbiteStudios.CodeRomba.UI.Enumerations;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using System.Windows.Media;
+using WinterbiteStudios.CodeRomba.Helpers;
+using WinterbiteStudios.CodeRomba.Properties;
+using WinterbiteStudios.CodeRomba.UI.Enumerations;
 
 namespace WinterbiteStudios.CodeRomba.UI
 {

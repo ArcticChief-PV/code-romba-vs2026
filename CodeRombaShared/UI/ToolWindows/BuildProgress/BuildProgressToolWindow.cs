@@ -2,13 +2,13 @@ using EnvDTE;
 using Microsoft.VisualStudio.Imaging.Interop;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
-using WinterbiteStudios.CodeRomba.Properties;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
+using WinterbiteStudios.CodeRomba.Properties;
 
 namespace WinterbiteStudios.CodeRomba.UI.ToolWindows.BuildProgress
 {

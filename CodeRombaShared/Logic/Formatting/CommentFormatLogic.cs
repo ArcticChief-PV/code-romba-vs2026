@@ -1,9 +1,9 @@
 using EnvDTE;
+using System.Linq;
 using WinterbiteStudios.CodeRomba.Helpers;
 using WinterbiteStudios.CodeRomba.Model.Comments;
 using WinterbiteStudios.CodeRomba.Model.Comments.Options;
 using WinterbiteStudios.CodeRomba.Properties;
-using System.Linq;
 
 namespace WinterbiteStudios.CodeRomba.Logic.Formatting
 {

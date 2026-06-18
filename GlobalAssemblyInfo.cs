@@ -1,8 +1,8 @@
-using WinterbiteStudios.CodeRomba;
 using System;
 using System.Reflection;
 using System.Resources;
 using System.Runtime.InteropServices;
+using WinterbiteStudios.CodeRomba;
 
 [assembly: AssemblyCompany(Vsix.Author)]
 [assembly: AssemblyCopyright("Copyright 2007-2021 Steve Cadwallader, 2026 WinterBiteStudios (LGPL v3)")]

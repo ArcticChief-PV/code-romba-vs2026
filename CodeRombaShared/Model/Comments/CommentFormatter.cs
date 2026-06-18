@@ -1,9 +1,9 @@
-using WinterbiteStudios.CodeRomba.Helpers;
-using WinterbiteStudios.CodeRomba.Model.Comments.Options;
 using System;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using WinterbiteStudios.CodeRomba.Helpers;
+using WinterbiteStudios.CodeRomba.Model.Comments.Options;
 
 namespace WinterbiteStudios.CodeRomba.Model.Comments
 {

@@ -1,7 +1,7 @@
 using EnvDTE;
+using System.Linq;
 using WinterbiteStudios.CodeRomba.Helpers;
 using WinterbiteStudios.CodeRomba.Model.CodeItems;
-using System.Linq;
 
 namespace WinterbiteStudios.CodeRomba.Model
 {

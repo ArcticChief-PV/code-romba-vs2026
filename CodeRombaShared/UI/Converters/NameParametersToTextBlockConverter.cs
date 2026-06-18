@@ -1,6 +1,3 @@
-using WinterbiteStudios.CodeRomba.Helpers;
-using WinterbiteStudios.CodeRomba.Model.CodeItems;
-using WinterbiteStudios.CodeRomba.Properties;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -8,6 +5,9 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using WinterbiteStudios.CodeRomba.Helpers;
+using WinterbiteStudios.CodeRomba.Model.CodeItems;
+using WinterbiteStudios.CodeRomba.Properties;
 
 namespace WinterbiteStudios.CodeRomba.UI.Converters
 {

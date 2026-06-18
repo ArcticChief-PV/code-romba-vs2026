@@ -1,5 +1,5 @@
-using WinterbiteStudios.CodeRomba.Properties;
 using System;
+using WinterbiteStudios.CodeRomba.Properties;
 
 namespace WinterbiteStudios.CodeRomba.Model.Comments.Options
 {

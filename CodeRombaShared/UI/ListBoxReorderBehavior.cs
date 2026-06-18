@@ -1,4 +1,3 @@
-using WinterbiteStudios.CodeRomba.UI.Enumerations;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,6 +6,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Interactivity;
+using WinterbiteStudios.CodeRomba.UI.Enumerations;
 
 namespace WinterbiteStudios.CodeRomba.UI
 {

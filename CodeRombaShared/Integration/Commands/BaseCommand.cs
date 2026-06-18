@@ -1,7 +1,7 @@
 using Microsoft.VisualStudio.Shell;
-using WinterbiteStudios.CodeRomba.Helpers;
 using System;
 using System.ComponentModel.Design;
+using WinterbiteStudios.CodeRomba.Helpers;
 using Task = System.Threading.Tasks.Task;
 
 namespace WinterbiteStudios.CodeRomba.Integration.Commands

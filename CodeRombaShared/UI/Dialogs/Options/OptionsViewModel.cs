@@ -1,3 +1,10 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Configuration;
+using System.IO;
+using System.Linq;
+using System.Windows;
 using WinterbiteStudios.CodeRomba.Helpers;
 using WinterbiteStudios.CodeRomba.Properties;
 using WinterbiteStudios.CodeRomba.UI.Dialogs.Options.Cleaning;
@@ -10,13 +17,6 @@ using WinterbiteStudios.CodeRomba.UI.Dialogs.Options.Progressing;
 using WinterbiteStudios.CodeRomba.UI.Dialogs.Options.Reorganizing;
 using WinterbiteStudios.CodeRomba.UI.Dialogs.Options.Switching;
 using WinterbiteStudios.CodeRomba.UI.Dialogs.Options.ThirdParty;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Configuration;
-using System.IO;
-using System.Linq;
-using System.Windows;
 
 namespace WinterbiteStudios.CodeRomba.UI.Dialogs.Options
 {

@@ -1,6 +1,6 @@
-using WinterbiteStudios.CodeRomba.Model.CodeItems;
 using System;
 using System.ComponentModel;
+using WinterbiteStudios.CodeRomba.Model.CodeItems;
 
 namespace WinterbiteStudios.CodeRomba.Model.CodeTree
 {

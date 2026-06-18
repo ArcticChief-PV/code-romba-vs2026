@@ -1,7 +1,7 @@
 using EnvDTE;
 using Microsoft.VisualStudio.Shell.Interop;
-using WinterbiteStudios.CodeRomba.Properties;
 using System.Threading.Tasks;
+using WinterbiteStudios.CodeRomba.Properties;
 
 namespace WinterbiteStudios.CodeRomba.Integration.Commands
 {

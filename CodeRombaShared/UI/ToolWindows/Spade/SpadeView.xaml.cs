@@ -1,9 +1,4 @@
 using Microsoft.VisualStudio.Shell;
-using WinterbiteStudios.CodeRomba.Helpers;
-using WinterbiteStudios.CodeRomba.Logic.Reorganizing;
-using WinterbiteStudios.CodeRomba.Model.CodeItems;
-using WinterbiteStudios.CodeRomba.Properties;
-using WinterbiteStudios.CodeRomba.UI.Enumerations;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
@@ -13,6 +8,11 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Interactivity;
+using WinterbiteStudios.CodeRomba.Helpers;
+using WinterbiteStudios.CodeRomba.Logic.Reorganizing;
+using WinterbiteStudios.CodeRomba.Model.CodeItems;
+using WinterbiteStudios.CodeRomba.Properties;
+using WinterbiteStudios.CodeRomba.UI.Enumerations;
 
 namespace WinterbiteStudios.CodeRomba.UI.ToolWindows.Spade
 {

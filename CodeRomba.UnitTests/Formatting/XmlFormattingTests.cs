@@ -1,7 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using WinterbiteStudios.CodeRomba.Model.Comments.Options;
 using WinterbiteStudios.CodeRomba.Properties;
-using System;
 
 namespace WinterbiteStudios.CodeRomba.UnitTests.Formatting
 {

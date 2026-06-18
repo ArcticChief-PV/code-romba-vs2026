@@ -1,9 +1,9 @@
 using EnvDTE;
+using System.Threading.Tasks;
 using WinterbiteStudios.CodeRomba.Helpers;
 using WinterbiteStudios.CodeRomba.Logic.Cleaning;
 using WinterbiteStudios.CodeRomba.Model;
 using WinterbiteStudios.CodeRomba.Properties;
-using System.Threading.Tasks;
 
 namespace WinterbiteStudios.CodeRomba.Integration.Commands
 {

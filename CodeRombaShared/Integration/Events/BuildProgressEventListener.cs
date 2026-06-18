@@ -1,6 +1,6 @@
 using EnvDTE;
-using WinterbiteStudios.CodeRomba.Helpers;
 using System.Threading.Tasks;
+using WinterbiteStudios.CodeRomba.Helpers;
 
 namespace WinterbiteStudios.CodeRomba.Integration.Events
 {

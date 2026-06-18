@@ -1,7 +1,7 @@
 using EnvDTE;
+using System.Collections.Generic;
 using WinterbiteStudios.CodeRomba.Helpers;
 using WinterbiteStudios.CodeRomba.Properties;
-using System.Collections.Generic;
 
 namespace WinterbiteStudios.CodeRomba.Model
 {

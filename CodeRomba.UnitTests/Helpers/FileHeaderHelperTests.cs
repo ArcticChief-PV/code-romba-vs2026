@@ -1,9 +1,9 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NUnit.Framework;
-using WinterbiteStudios.CodeRomba.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using WinterbiteStudios.CodeRomba.Helpers;
 using Assert = NUnit.Framework.Assert;
 
 namespace WinterbiteStudios.CodeRomba.UnitTests.Helpers

@@ -1,7 +1,7 @@
-using WinterbiteStudios.CodeRomba.Model.Comments.Options;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+using WinterbiteStudios.CodeRomba.Model.Comments.Options;
 
 namespace WinterbiteStudios.CodeRomba.Model.Comments
 {

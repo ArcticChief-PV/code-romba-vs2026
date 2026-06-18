@@ -1,5 +1,5 @@
-using WinterbiteStudios.CodeRomba.Helpers;
 using System.Configuration;
+using WinterbiteStudios.CodeRomba.Helpers;
 
 namespace WinterbiteStudios.CodeRomba.Properties
 {

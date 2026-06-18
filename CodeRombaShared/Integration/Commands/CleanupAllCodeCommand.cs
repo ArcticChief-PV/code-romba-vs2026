@@ -1,12 +1,12 @@
 using EnvDTE;
-using WinterbiteStudios.CodeRomba.Helpers;
-using WinterbiteStudios.CodeRomba.Logic.Cleaning;
-using WinterbiteStudios.CodeRomba.Properties;
-using WinterbiteStudios.CodeRomba.UI.Dialogs.CleanupProgress;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using WinterbiteStudios.CodeRomba.Helpers;
+using WinterbiteStudios.CodeRomba.Logic.Cleaning;
+using WinterbiteStudios.CodeRomba.Properties;
+using WinterbiteStudios.CodeRomba.UI.Dialogs.CleanupProgress;
 
 namespace WinterbiteStudios.CodeRomba.Integration.Commands
 {

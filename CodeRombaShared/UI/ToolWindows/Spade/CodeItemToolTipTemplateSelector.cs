@@ -1,6 +1,6 @@
-using WinterbiteStudios.CodeRomba.Model.CodeItems;
 using System.Windows;
 using System.Windows.Controls;
+using WinterbiteStudios.CodeRomba.Model.CodeItems;
 
 namespace WinterbiteStudios.CodeRomba.UI.ToolWindows.Spade
 {

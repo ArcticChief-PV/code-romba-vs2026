@@ -1,10 +1,10 @@
 using EnvDTE;
-using WinterbiteStudios.CodeRomba.Helpers;
-using WinterbiteStudios.CodeRomba.Properties;
 using System;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WinterbiteStudios.CodeRomba.Helpers;
+using WinterbiteStudios.CodeRomba.Properties;
 using TextSelection = EnvDTE.TextSelection;
 
 namespace WinterbiteStudios.CodeRomba.Integration.Commands

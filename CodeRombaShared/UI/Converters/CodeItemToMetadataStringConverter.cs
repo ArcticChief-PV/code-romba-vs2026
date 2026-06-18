@@ -1,10 +1,10 @@
 using EnvDTE80;
-using WinterbiteStudios.CodeRomba.Model.CodeItems;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Windows.Data;
+using WinterbiteStudios.CodeRomba.Model.CodeItems;
 
 namespace WinterbiteStudios.CodeRomba.UI.Converters
 {

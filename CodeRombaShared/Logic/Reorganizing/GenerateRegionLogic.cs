@@ -1,11 +1,11 @@
 using EnvDTE;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using WinterbiteStudios.CodeRomba.Helpers;
 using WinterbiteStudios.CodeRomba.Logic.Cleaning;
 using WinterbiteStudios.CodeRomba.Model.CodeItems;
 using WinterbiteStudios.CodeRomba.Properties;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using Thread = System.Threading.Thread;
 
 namespace WinterbiteStudios.CodeRomba.Logic.Reorganizing

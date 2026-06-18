@@ -1,7 +1,7 @@
+using System.Windows.Media;
 using WinterbiteStudios.CodeRomba.Model.Comments;
 using WinterbiteStudios.CodeRomba.Model.Comments.Options;
 using WinterbiteStudios.CodeRomba.Properties;
-using System.Windows.Media;
 
 namespace WinterbiteStudios.CodeRomba.UI.Dialogs.Options.Formatting
 {

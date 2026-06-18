@@ -1,7 +1,7 @@
 using EnvDTE;
 using EnvDTE80;
-using WinterbiteStudios.CodeRomba.Helpers;
 using System;
+using WinterbiteStudios.CodeRomba.Helpers;
 
 namespace WinterbiteStudios.CodeRomba.Model.CodeItems
 {

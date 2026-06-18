@@ -1,7 +1,7 @@
-using WinterbiteStudios.CodeRomba.Logic.Cleaning;
-using WinterbiteStudios.CodeRomba.Model.CodeItems;
 using System.Linq;
 using System.Threading.Tasks;
+using WinterbiteStudios.CodeRomba.Logic.Cleaning;
+using WinterbiteStudios.CodeRomba.Model.CodeItems;
 
 namespace WinterbiteStudios.CodeRomba.Integration.Commands
 {

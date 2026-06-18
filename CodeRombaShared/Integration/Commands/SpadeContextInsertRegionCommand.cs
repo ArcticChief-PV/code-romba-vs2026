@@ -1,9 +1,9 @@
+using System.Linq;
+using System.Threading.Tasks;
 using WinterbiteStudios.CodeRomba.Helpers;
 using WinterbiteStudios.CodeRomba.Logic.Reorganizing;
 using WinterbiteStudios.CodeRomba.Model.CodeItems;
 using WinterbiteStudios.CodeRomba.Properties;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace WinterbiteStudios.CodeRomba.Integration.Commands
 {

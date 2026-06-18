@@ -1,7 +1,7 @@
-using WinterbiteStudios.CodeRomba.Properties;
 using System;
 using System.Windows;
 using System.Windows.Shell;
+using WinterbiteStudios.CodeRomba.Properties;
 
 namespace WinterbiteStudios.CodeRomba.UI.ToolWindows.BuildProgress
 {

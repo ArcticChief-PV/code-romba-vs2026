@@ -1,10 +1,10 @@
 using EnvDTE;
-using WinterbiteStudios.CodeRomba.Helpers;
-using WinterbiteStudios.CodeRomba.Model.Comments.Options;
 using System;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Xml.Linq;
+using WinterbiteStudios.CodeRomba.Helpers;
+using WinterbiteStudios.CodeRomba.Model.Comments.Options;
 
 namespace WinterbiteStudios.CodeRomba.Model.Comments
 {

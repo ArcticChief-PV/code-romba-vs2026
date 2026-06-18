@@ -1,9 +1,9 @@
 using EnvDTE;
+using System;
 using WinterbiteStudios.CodeRomba.Helpers;
 using WinterbiteStudios.CodeRomba.Properties;
 using WinterbiteStudios.CodeRomba.UI.Dialogs.Prompts;
 using WinterbiteStudios.CodeRomba.UI.Enumerations;
-using System;
 
 namespace WinterbiteStudios.CodeRomba.Logic.Reorganizing
 {

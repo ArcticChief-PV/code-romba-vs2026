@@ -1,9 +1,9 @@
-using WinterbiteStudios.CodeRomba.Helpers;
-using WinterbiteStudios.CodeRomba.Model.CodeItems;
-using WinterbiteStudios.CodeRomba.Properties;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using WinterbiteStudios.CodeRomba.Helpers;
+using WinterbiteStudios.CodeRomba.Model.CodeItems;
+using WinterbiteStudios.CodeRomba.Properties;
 
 namespace WinterbiteStudios.CodeRomba.Model.CodeTree
 {

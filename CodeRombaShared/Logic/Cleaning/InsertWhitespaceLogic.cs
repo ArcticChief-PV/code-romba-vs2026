@@ -1,7 +1,7 @@
 using EnvDTE;
+using System;
 using WinterbiteStudios.CodeRomba.Helpers;
 using WinterbiteStudios.CodeRomba.Properties;
-using System;
 
 namespace WinterbiteStudios.CodeRomba.Logic.Cleaning
 {

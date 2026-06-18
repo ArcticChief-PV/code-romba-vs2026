@@ -5,10 +5,10 @@ using Microsoft.VisualStudio.Shell.Interop;
 using Microsoft.VisualStudio.Text;
 using Microsoft.VisualStudio.Text.Operations;
 using Microsoft.VisualStudio.TextManager.Interop;
-using WinterbiteStudios.CodeRomba.Model.CodeItems;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using WinterbiteStudios.CodeRomba.Model.CodeItems;
 
 namespace WinterbiteStudios.CodeRomba.Helpers
 {

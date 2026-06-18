@@ -1,10 +1,10 @@
 using EnvDTE;
-using WinterbiteStudios.CodeRomba.Helpers;
-using WinterbiteStudios.CodeRomba.Properties;
-using WinterbiteStudios.CodeRomba.UI.Enumerations;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using WinterbiteStudios.CodeRomba.Helpers;
+using WinterbiteStudios.CodeRomba.Properties;
+using WinterbiteStudios.CodeRomba.UI.Enumerations;
 
 namespace WinterbiteStudios.CodeRomba.Logic.Cleaning
 {

@@ -1,5 +1,5 @@
-using WinterbiteStudios.CodeRomba.Properties;
 using System.Reflection;
+using WinterbiteStudios.CodeRomba.Properties;
 
 namespace WinterbiteStudios.CodeRomba.UI.Dialogs.Options
 {

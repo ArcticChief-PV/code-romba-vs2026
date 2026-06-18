@@ -1,13 +1,13 @@
 using EnvDTE;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using WinterbiteStudios.CodeRomba.Helpers;
 using WinterbiteStudios.CodeRomba.Logic.Formatting;
 using WinterbiteStudios.CodeRomba.Logic.Reorganizing;
 using WinterbiteStudios.CodeRomba.Model;
 using WinterbiteStudios.CodeRomba.Model.CodeItems;
 using WinterbiteStudios.CodeRomba.Properties;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace WinterbiteStudios.CodeRomba.Logic.Cleaning
 {

@@ -1,9 +1,9 @@
 using EnvDTE;
 using EnvDTE80;
-using WinterbiteStudios.CodeRomba.Properties;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using WinterbiteStudios.CodeRomba.Properties;
 
 namespace WinterbiteStudios.CodeRomba.Helpers
 {
