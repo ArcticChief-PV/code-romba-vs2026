@@ -7,7 +7,7 @@ namespace WinterbiteStudios.CodeRomba
         public const string Description = "CodeRomba is an open source Visual Studio extension to cleanup and simplify our C#, C++, F#, VB, PHP, PowerShell, R, JSON, XAML, XML, ASP, HTML, CSS, LESS, SCSS, JavaScript and TypeScript coding.";
         public const string Language = "en-US";
         public const string Version = "13.0";
-        public const string Author = "Steve Cadwallader & WinterBiteStudios";
+        public const string Author = "Steve Cadwallader";
         public const string Tags = "build, code, c#, beautify, cleanup, cleaning, digging, reorganizing, formatting";
     }
 }

@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 using WinterbiteStudios.CodeRomba;
 
 [assembly: AssemblyCompany(Vsix.Author)]
-[assembly: AssemblyCopyright("Copyright 2007-2021 Steve Cadwallader, 2026 WinterBiteStudios (LGPL v3)")]
+[assembly: AssemblyCopyright("Copyright 2007-2021 Steve Cadwallader, 2026 WinterbiteStudios (LGPL v3)")]
 [assembly: AssemblyDescription(Vsix.Description)]
 [assembly: AssemblyFileVersion(Vsix.Version)]
 [assembly: AssemblyProduct(Vsix.Name)]

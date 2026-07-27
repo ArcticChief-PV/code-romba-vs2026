@@ -17,13 +17,10 @@ namespace WinterbiteStudios.CodeRomba.Logic.Reorganizing
         /// <returns>True if the specified objects are equal; otherwise, false.</returns>
         public bool Equals(CodeItemRegion x, CodeItemRegion y)
         {
-            if (x == null && y == null) return true;
+            if (ReferenceEquals(x, y)) return true;
             if (x == null || y == null) return false;
 
-            if (x.Name == null && y.Name == null) return true;
-            if (x.Name == null || y.Name == null) return false;
-
-            return x.Name.Equals(y.Name);
+            return string.Equals(x.Name, y.Name, StringComparison.Ordinal);
         }
 
         /// <summary>

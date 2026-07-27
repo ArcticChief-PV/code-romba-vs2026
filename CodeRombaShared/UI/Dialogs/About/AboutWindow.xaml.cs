@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Reflection;
 using System.Windows;
@@ -59,7 +60,7 @@ namespace WinterbiteStudios.CodeRomba.UI.Dialogs.About
         /// </param>
         private void OnWebsiteLinkClick(object sender, RoutedEventArgs e)
         {
-            LaunchLink(@"http://www.CodeRomba.net/");
+            ShowInDevelopmentWarning("Website");
         }
 
         /// <summary>
@@ -71,7 +72,7 @@ namespace WinterbiteStudios.CodeRomba.UI.Dialogs.About
         /// </param>
         private void OnVisualStudioMarketplaceLinkClick(object sender, RoutedEventArgs e)
         {
-            LaunchLink(@"https://marketplace.visualstudio.com/items?itemName=WinterbiteStudios.CodeRomba");
+            ShowInDevelopmentWarning("Visual Studio Marketplace listing");
         }
 
         /// <summary>
@@ -83,7 +84,7 @@ namespace WinterbiteStudios.CodeRomba.UI.Dialogs.About
         /// </param>
         private void OnGitHubLinkClick(object sender, RoutedEventArgs e)
         {
-            LaunchLink(@"https://github.com/WinterBiteStudios/CodeRomba");
+            LaunchLink(@"https://github.com/ArcticChief-PV/code-romba-vs2026");
         }
 
         /// <summary>
@@ -95,12 +96,26 @@ namespace WinterbiteStudios.CodeRomba.UI.Dialogs.About
         /// </param>
         private void OnTwitterLinkClick(object sender, RoutedEventArgs e)
         {
-            LaunchLink(@"https://twitter.com/CodeRomba/");
+            ShowInDevelopmentWarning("Twitter/X account");
         }
 
         #endregion Event Handlers
 
         #region Methods
+
+        /// <summary>
+        /// Shows a warning that the requested resource is not available yet because CodeRomba is
+        /// still in development.
+        /// </summary>
+        /// <param name="resource">The name of the resource the user attempted to open.</param>
+        private static void ShowInDevelopmentWarning(string resource)
+        {
+            MessageBox.Show(
+                $"The {resource} is not available yet.\n\nCodeRomba is still in development.",
+                "CodeRomba - Still in development",
+                MessageBoxButton.OK,
+                MessageBoxImage.Warning);
+        }
 
         /// <summary>
         /// Attempts to launch the specified link.
@@ -112,9 +127,9 @@ namespace WinterbiteStudios.CodeRomba.UI.Dialogs.About
             {
                 Process.Start(link);
             }
-            catch (Exception)
+            catch (Exception ex) when (ex is Win32Exception || ex is InvalidOperationException)
             {
-                // Do nothing if default application handler is not associated.
+                // Do nothing if no default application handler is associated with the link.
             }
         }
 
