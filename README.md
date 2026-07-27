@@ -1,5 +1,7 @@
 # CodeRomba
 
+VS2026_URL: https://marketplace.visualstudio.com/items?itemName=WinterbiteStudio.CodeRomba
+
 CodeRomba is an open-source Visual Studio extension that cleans up, reorganizes,
 and formats your code — C#, C++, F#, VB, PHP, PowerShell, R, JSON, XAML, XML,
 ASP, HTML, CSS, LESS, SCSS, JavaScript, and TypeScript.
