@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
   <Include href="CodeRomba.vsct" />
@@ -27,7 +27,7 @@
         <CommandFlag>DefaultDocked</CommandFlag>
         <Strings>
           <ButtonText>CodeRomba Spade Toolbar</ButtonText>
-          <CommandName>CodeRomba????</CommandName>
+          <CommandName>CodeRomba码锹窗口</CommandName>
         </Strings>
       </Menu>
       <Menu guid="GuidCodeRombaMenuSet" id="MenuIDCodeRombaContextSpade" type="Context">
@@ -112,7 +112,7 @@
       <Button guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaAbout" priority="0x0100" type="Button">
         <Icon guid="GuidImageInfo" id="IconInfo" />
         <Strings>
-          <ButtonText>?? CodeRomba...</ButtonText>
+          <ButtonText>关于 CodeRomba...</ButtonText>
         </Strings>
       </Button>
 
@@ -121,7 +121,7 @@
         <CommandFlag>DefaultInvisible</CommandFlag>
         <CommandFlag>DynamicVisibility</CommandFlag>
         <Strings>
-          <ButtonText>????(&amp;B)</ButtonText>
+          <ButtonText>生成进度(&amp;B)</ButtonText>
         </Strings>
       </Button>
 
@@ -131,7 +131,7 @@
         <CommandFlag>DynamicVisibility</CommandFlag>
         <CommandFlag>TextChanges</CommandFlag>
         <Strings>
-          <ButtonText>??????(&amp;C)</ButtonText>
+          <ButtonText>清理活动文档(&amp;C)</ButtonText>
         </Strings>
       </Button>
 
@@ -140,7 +140,7 @@
         <CommandFlag>DefaultInvisible</CommandFlag>
         <CommandFlag>DynamicVisibility</CommandFlag>
         <Strings>
-          <ButtonText>??????(&amp;A)...</ButtonText>
+          <ButtonText>清理所有代码(&amp;A)...</ButtonText>
         </Strings>
       </Button>
 
@@ -149,7 +149,7 @@
         <CommandFlag>DefaultInvisible</CommandFlag>
         <CommandFlag>DynamicVisibility</CommandFlag>
         <Strings>
-          <ButtonText>???????(&amp;C)</ButtonText>
+          <ButtonText>清理打开的代码(&amp;C)</ButtonText>
         </Strings>
       </Button>
 
@@ -158,7 +158,7 @@
         <CommandFlag>DefaultInvisible</CommandFlag>
         <CommandFlag>DynamicVisibility</CommandFlag>
         <Strings>
-          <ButtonText>??????(&amp;C)</ButtonText>
+          <ButtonText>清理已选代码(&amp;C)</ButtonText>
         </Strings>
       </Button>
 
@@ -167,7 +167,7 @@
         <CommandFlag>DefaultInvisible</CommandFlag>
         <CommandFlag>DynamicVisibility</CommandFlag>
         <Strings>
-          <ButtonText>??????(&amp;R)</ButtonText>
+          <ButtonText>关闭所有只读(&amp;R)</ButtonText>
         </Strings>
       </Button>
 
@@ -176,7 +176,7 @@
         <CommandFlag>DefaultInvisible</CommandFlag>
         <CommandFlag>DynamicVisibility</CommandFlag>
         <Strings>
-          <ButtonText>??????(&amp;L)</ButtonText>
+          <ButtonText>全部递归折叠(&amp;L)</ButtonText>
         </Strings>
       </Button>
 
@@ -185,7 +185,7 @@
         <CommandFlag>DefaultInvisible</CommandFlag>
         <CommandFlag>DynamicVisibility</CommandFlag>
         <Strings>
-          <ButtonText>????(&amp;L)</ButtonText>
+          <ButtonText>递归折叠(&amp;L)</ButtonText>
         </Strings>
       </Button>
 
@@ -194,7 +194,7 @@
         <CommandFlag>DefaultInvisible</CommandFlag>
         <CommandFlag>DynamicVisibility</CommandFlag>
         <Strings>
-          <ButtonText>?????(&amp;N)</ButtonText>
+          <ButtonText>格式化注释(&amp;N)</ButtonText>
         </Strings>
       </Button>
 
@@ -203,7 +203,7 @@
         <CommandFlag>DefaultInvisible</CommandFlag>
         <CommandFlag>DynamicVisibility</CommandFlag>
         <Strings>
-          <ButtonText>?????????????(&amp;F)</ButtonText>
+          <ButtonText>在解决方案资源管理器中查找(&amp;F)</ButtonText>
         </Strings>
       </Button>
 
@@ -212,14 +212,14 @@
         <CommandFlag>DefaultInvisible</CommandFlag>
         <CommandFlag>DynamicVisibility</CommandFlag>
         <Strings>
-          <ButtonText>????(&amp;J)</ButtonText>
+          <ButtonText>连接多行(&amp;J)</ButtonText>
         </Strings>
       </Button>
 
       <Button guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaOptions" priority="0x0100" type="Button">
         <Icon guid="GuidImageOptions" id="IconOptions" />
         <Strings>
-          <ButtonText>??(&amp;O)...</ButtonText>
+          <ButtonText>选项(&amp;O)...</ButtonText>
         </Strings>
       </Button>
 
@@ -228,7 +228,7 @@
         <CommandFlag>DefaultInvisible</CommandFlag>
         <CommandFlag>DynamicVisibility</CommandFlag>
         <Strings>
-          <ButtonText>????(&amp;R)</ButtonText>
+          <ButtonText>只读切换(&amp;R)</ButtonText>
         </Strings>
       </Button>
 
@@ -238,7 +238,7 @@
         <CommandFlag>DynamicVisibility</CommandFlag>
         <CommandFlag>TextChanges</CommandFlag>
         <Strings>
-          <ButtonText>???? #regions(&amp;R)</ButtonText>
+          <ButtonText>移除所有 #regions(&amp;R)</ButtonText>
         </Strings>
       </Button>
 
@@ -248,7 +248,7 @@
         <CommandFlag>DynamicVisibility</CommandFlag>
         <CommandFlag>TextChanges</CommandFlag>
         <Strings>
-          <ButtonText>??????(&amp;Z)</ButtonText>
+          <ButtonText>整理活动文档(&amp;Z)</ButtonText>
         </Strings>
       </Button>
 
@@ -258,7 +258,7 @@
         <CommandFlag>DynamicVisibility</CommandFlag>
         <CommandFlag>TextChanges</CommandFlag>
         <Strings>
-          <ButtonText>???????(&amp;A)</ButtonText>
+          <ButtonText>保存时自动清理(&amp;A)</ButtonText>
         </Strings>
       </Button>
 
@@ -267,76 +267,76 @@
         <CommandFlag>DefaultInvisible</CommandFlag>
         <CommandFlag>DynamicVisibility</CommandFlag>
         <Strings>
-          <ButtonText>????(&amp;S)</ButtonText>
+          <ButtonText>排序多行(&amp;S)</ButtonText>
         </Strings>
       </Button>
 
       <Button guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaSpadeContextDelete" priority="0x0100" type="Button">
         <CommandFlag>DynamicVisibility</CommandFlag>
         <Strings>
-          <ButtonText>??(&amp;D)</ButtonText>
+          <ButtonText>删除(&amp;D)</ButtonText>
         </Strings>
       </Button>
 
       <Button guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaSpadeContextFindReferences" priority="0x0100" type="Button">
         <CommandFlag>DynamicVisibility</CommandFlag>
         <Strings>
-          <ButtonText>????(&amp;F)</ButtonText>
+          <ButtonText>查找引用(&amp;F)</ButtonText>
         </Strings>
       </Button>
 
       <Button guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaSpadeContextInsertRegion" priority="0x0100" type="Button">
         <CommandFlag>DynamicVisibility</CommandFlag>
         <Strings>
-          <ButtonText>?? #region(&amp;I)</ButtonText>
+          <ButtonText>插入 #region(&amp;I)</ButtonText>
         </Strings>
       </Button>
 
       <Button guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaSpadeContextRemoveRegion" priority="0x0100" type="Button">
         <CommandFlag>DynamicVisibility</CommandFlag>
         <Strings>
-          <ButtonText>?? #region(&amp;R)</ButtonText>
+          <ButtonText>移除 #region(&amp;R)</ButtonText>
         </Strings>
       </Button>
 
       <Button guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaSpadeOptions" priority="0x0100" type="Button">
         <Icon guid="GuidImageOptions" id="IconOptions" />
         <Strings>
-          <ButtonText>??(&amp;O)...</ButtonText>
+          <ButtonText>选项(&amp;O)...</ButtonText>
         </Strings>
       </Button>
 
       <Button guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaSpadeRefresh" priority="0x0100" type="Button">
         <Icon guid="GuidImageRefresh" id="IconRefresh" />
         <Strings>
-          <ButtonText>??????</ButtonText>
+          <ButtonText>刷新码锹窗口</ButtonText>
         </Strings>
       </Button>
 
       <Button guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaSpadeSearch" priority="0x0100" type="Button">
         <Strings>
-          <ButtonText>??????</ButtonText>
+          <ButtonText>搜索码锹窗口</ButtonText>
         </Strings>
       </Button>
 
       <Button guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaSpadeSortOrderAlpha" priority="0x0100" type="Button">
         <Icon guid="GuidImageSortAlpha" id="IconSortAlpha" />
         <Strings>
-          <ButtonText>?????</ButtonText>
+          <ButtonText>按字母排序</ButtonText>
         </Strings>
       </Button>
 
       <Button guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaSpadeSortOrderFile" priority="0x0100" type="Button">
         <Icon guid="GuidImageSortNumeric" id="IconSortNumeric" />
         <Strings>
-          <ButtonText>?????</ButtonText>
+          <ButtonText>按文件排序</ButtonText>
         </Strings>
       </Button>
 
       <Button guid="GuidCodeRombaMenuSet" id="CmdIDCodeRombaSpadeSortOrderType" priority="0x0100" type="Button">
         <Icon guid="GuidImageSortType" id="IconSortType" />
         <Strings>
-          <ButtonText>?????</ButtonText>
+          <ButtonText>按类型排序</ButtonText>
         </Strings>
       </Button>
 
@@ -345,7 +345,7 @@
         <CommandFlag>DefaultInvisible</CommandFlag>
         <CommandFlag>DynamicVisibility</CommandFlag>
         <Strings>
-          <ButtonText>????(&amp;S)</ButtonText>
+          <ButtonText>码锹窗口(&amp;S)</ButtonText>
         </Strings>
       </Button>
 
@@ -355,7 +355,7 @@
         <CommandFlag>DynamicVisibility</CommandFlag>
         <CommandFlag>TextChanges</CommandFlag>
         <Strings>
-          <ButtonText>????(&amp;S)</ButtonText>
+          <ButtonText>切换文件(&amp;S)</ButtonText>
         </Strings>
       </Button>
     </Buttons>

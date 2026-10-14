@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Publisher="WinterbiteStudios" Version="13.1" Id="24da303b-fa95-4f9d-bf0a-a9494ed5e45b" Language="en-US" />
+        <Identity Publisher="WinterbiteStudios" Version="13.2" Id="24da303b-fa95-4f9d-bf0a-a9494ed5e45b" Language="en-US" />
         <DisplayName>CodeRomba VS2026</DisplayName>
         <Description xml:space="preserve">CodeRomba is an open source Visual Studio extension to cleanup and simplify our C#, C++, F#, VB, PHP, PowerShell, R, JSON, XAML, XML, ASP, HTML, CSS, LESS, SCSS, JavaScript and TypeScript coding.</Description>
         <MoreInfo>https://github.com/ArcticChief-PV/code-romba-vs2026</MoreInfo>
